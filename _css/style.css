@@ -69,11 +69,11 @@ h1 {
 }
 
 h2 {
-  font-size: 3rem;
+  /* font-size: 3rem; */
   font-family: 'Lora', serif;
   background-color: #0e0e0e;
   background-image: url("textures/asfalt-dark.png");
-  margin-bottom: 20px;
+  margin: 20px 0;
   background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -360,45 +360,7 @@ ___________________________________________________*/
   padding: 10px 5px 10px 5px;
 }
 
-/*___________________________________________________
-Note boxes
-___________________________________________________*/
 
-.alert-important, .alert-note, .alert-tip, .alert-warning {
-  position: relative;
-  padding: 15px;
-  border: 1px solid #DCDCDC;
-  height: auto;
-  min-height: 90px;
-  display: table;
-  margin: 15px 0 15px 0;
-  background-color: rgba(125, 115, 115, 0.15);
-}
-
-.alert-content {
-  margin-left: 80px;
-  line-height: 22px;
-  font-size: 95%;
-  padding-left: 20px;
-  border-left: 1px solid #DCDCDC;
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.alert-content ul, .alert-content ol {
-  margin-bottom: 0;
-}
-
-.alert-content li {
-  padding: 0;
-}
-
-.alert-icon {
-  display: table-cell;
-  width: 8%;
-  min-width: 75px;
-  vertical-align: middle;
-}
 
 /*___________________________________________________
 Examples in preformatted boxes
