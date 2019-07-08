@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <style>
+      .timestwo {
+  font-size: 2em;
+}
+
+.colorful {
+  color: white;
+}</style>
+    <title>hide()</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">hide()</li>
+          </ol>
+      </nav>
+
+
+<h1>hide()</h1>
+
+
+    <p>This example shows two paragraphs.</p>
+    <p>The jQuery code targets all paragraphs in this document, then assigns them the action of 'hide'.</p>
+    <p>the hide() function automatically hides the elements, so you will not see them when the page loads.</p>
+
+<pre class="example">
+<span class="code-html">&lt;div&gt;
+  &lt;p&gt;This is a sentence&lt;/p&gt;
+  &lt;p class="super"&gt; Here's another one &lt;/p&gt;
+  &lt;h4 class="super"&gt; Only the h4 tag shows &lt;/h4&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script src="js/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  $("p").hide();
+&lt;/script&gt;</span></pre>
+
+    <h3>Example</h3>
+      <div>
+        <p id="ex-001">This is a sentence</p>
+        <p id="ex-001" class="super"> Here's another one </p>
+        <h4 class="super"> Only the h4 tag shows </h4>
+      </div>
+
+
+
+
+
+
+
+
+    </section>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+      $("p#ex-001").hide();
+      $("p#ex-002").addClass("colorful timestwo");
+    </script>
+
+        <script src="_js/bootstrap.bundle.js"></script>
+</body>
+
+</html>

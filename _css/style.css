@@ -9,32 +9,16 @@ body {
   /* background-image: url("textures/asfalt-dark.png"); */
 }
 
-#tutorial-link-section {
-  padding: 25px;
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 5rem;
-  background-color: #262626;
-  background-image: url("textures/asfalt-light.png");
-  border-radius: 10px;
+
+.toc-heading {
+  text-align: center;
+  font-size: 4rem;
+  font-family: 'Lora', serif;
+  background: linear-gradient(to top, #f00 0%, #a7a7a7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 1px solid #eee;
 }
-
-.tutorial-button {
-  padding: 0;
-border-style: none;
-color: #fff;
-border-color: #007bff;
-font-weight: 400;
-text-align: center;
-border: 1px solid #007bff;
-border-radius: 0.25rem;
-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-
-
-
-
 
 .toc-heading1 {
   text-align: center;
@@ -55,7 +39,7 @@ transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-
 }
 
 h1 {
-  font-size: 3.3rem;
+  font-size: 3rem;
   font-family: 'Lora', serif;
   margin-top: 60px;
   margin-bottom: 20px;
