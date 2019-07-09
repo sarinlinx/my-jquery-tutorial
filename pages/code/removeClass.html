@@ -9,37 +9,39 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_css/style.css">
-
     <style>
-    .timestwo {
-     font-size: 2em;
-    }
+      .timestwo {
+        font-size: 2em;
+      }
 
-    .colorful {
-      color: cyan;
-    }</style>
+      .colorful {
+        color: cyan;
+      }</style>
 
-    <title>addClass()</title>
+    <title>removeClass()</title>
 </head>
+
 
 <body>
     <section class="container">
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb breadcrumb-container">
               <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">addClass()</li>
+              <li class="breadcrumb-item active" aria-current="page">removeClass()</li>
           </ol>
       </nav>
 
 
 
-<h1>addClass()</h1>
+<h1>removeClass()</h1>
 
 
   <p>The addClass function adds a CSS class to an element.</p>
   <p>This targets all paragraph tags.</p>
   <p>It then assigns those tags the action of addClass().</p>
-  <p>Finally, specify the CSS class name you want to add. This example adds 2 classes.</p>
+  <p>Specify the CSS class name you want to add. This example adds 2 classes.</p>
+  <p>The removeClass() is then run which removes the 'timestwo' class.</p>
+  <p>The result is only the color changing.</p>
 
 <pre class="example">
 <span class="code-css">.timestwo {
@@ -47,25 +49,26 @@
 }
 
 .colorful {
-  color: cyan;
+  color: white;
 }</span>
 
 <span class="code-html">&lt;div&gt;
   &lt;p&gt;This is a sentence&lt;/p&gt;
-  &lt;p&gt;Here's another one &lt;/p&gt;
-  &lt;h4&gt; h4 tag not changed &lt;/h4&gt;
+  &lt;p class="super"&gt; Here's another one &lt;/p&gt;
+  &lt;h4 class="super"&gt; h4 tag not changed &lt;/h4&gt;
 &lt;/div&gt;</span>
 
 <span class="code-js">&lt;script src="js/jquery-3.1.1.min.js"&gt;&lt;/script&gt;
 
 &lt;script&gt;
   $("p").addClass("colorful timestwo");
+  $("p").<span class="standout">removeClass</span>("timestwo");
 &lt;/script&gt;</span></pre>
 
   <h3>Example</h3>
     <div>
-      <p id="ex" class="cyan">This is a sentence</p>
-      <p id="ex" class="cyan"> Here's another one </p>
+      <p id="ex">This is a sentence</p>
+      <p id="ex" class="super"> Here's another one </p>
       <p class="white"> h4 tag not changed </p>
     </div>
 
@@ -83,8 +86,11 @@
     </section>
     <script src="../../_js/jquery-3.4.1.min.js"></script>
     <script>
-      $("p#ex").addClass("colorful timestwo");
+    $("p#ex").addClass("colorful timestwo");
+      $("p#ex").removeClass("timestwo");
     </script>
+
+      
 </body>
 
 </html>

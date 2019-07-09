@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <title>Targeting elements</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Targeting elements</li>
+          </ol>
+      </nav>
+
+
+
+<h1>Basic jQuery statement</h1>
+<img src="../../_img/basic-statement-syntax.png">
+
+
+<h2>The target</h2>
+<p>The CSS element/s to be acted on.</p>
+<p>Always in parenthesis and quotes.</p>
+<h3>Targeting an element with a class</h3>
+<p>Use the element, followed by a period, followed by the class name.</p>
+<pre class="example">
+<span class="code-html">&lt;p class="myClass"&gt;stuff...&lt;/p&gt;</span>
+
+<span class="code-js">$("p.myClass").addClass("colorful");</span>
+</pre>
+
+<h3>Targeting an element with an ID</h3>
+<p>Use the element, followed by a #, followed by the ID name.</p>
+<pre class="example">
+<span class="code-html">&lt;p id="myID"&gt;stuff...&lt;/p&gt;</span>
+
+<span class="code-js">$("p#myID").addClass("colorful");</span>
+</pre>
+
+<h3>Targeting 2 elements with a Class</h3>
+<p>Use the element, followed by a ., followed by the class name.</p>
+<p>Next, add a comma to separate the next element</p>
+<p>Add the new element, followed by a ., followed by the class name.</p>
+<pre class="example">
+<span class="code-html">&lt;p class="myClass"&gt;stuff...&lt;/p&gt;
+&lt;h4 id="myClass"&gt;stuff...&lt;/p&gt;</span>
+
+<span class="code-js">$("p.myClass,h4.myClass").addClass("colorful");</span>
+</pre>
+
+
+<h3>Target all elements on a page with a class</h3>
+<p>Use the ., followed by the class name.</p>
+<pre class="example">
+<span class="code-html">&lt;p class="myClass"&gt;stuff...&lt;/p&gt;
+
+<span class="code-js">$(".myClass").addClass("colorful");</span>
+</pre>
+
+
+
+
+
+
+
+
+
+
+    </section><script src="_js/jquery-3.4.1.min.js"></script>
+</body>
+
+</html>
