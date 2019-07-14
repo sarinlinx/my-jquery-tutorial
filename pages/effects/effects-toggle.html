@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The 'toggle' effect</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The 'toggle' effect</li>
+          </ol>
+      </nav>
+
+
+<h1>The 'toggle' effect</h1>
+
+    <p>toggle alternates between the show() and hide() methods.</p>
+    <p>Click the link to show the hidden div. Then click it again to hide it.</p>
+
+
+<pre class="example">
+<span class="code-html">&lt;a id="target" href="#"&gt; Click Here &lt;/a&gt;
+&lt;p id="statement"&gt; This is a sentence &lt;/p&gt;
+&lt;div id="box" style="width:500px; height:100px; border:1px solid #000; background-color:yellow; display:none;"&gt;
+  This is a rectangle
+  &lt;/div&gt;</span>
+
+<span class="code-js">$('#target').on("click", function() {
+  //code to be executed when the button is clicked
+  $('p#statement').hide();
+  $('div#box').<span class="standout">toggle()</span>;
+});</span></pre>
+
+
+
+    <h3>Example</h3>
+<a id="target" href="#"> Click Here </a>
+
+<p id="statement"> This is a sentence </p>
+
+<div id="box" style="width:500px; height:100px; border:1px solid #000; background-color:yellow; display:none;">
+  This is a rectangle
+  </div>
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+    $('#target').on("click", function() {
+      //code to be executed when the button is clicked
+      $('p#statement').hide();
+      $('div#box').toggle();
+    });
+
+    </script>
+
+</body>
+
+</html>

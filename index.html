@@ -9,8 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="_css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
     <title>Up and Running with jQuery</title>
 </head>
 
@@ -19,42 +18,40 @@
     <section class="container">
 
 
-  <p class="toc-heading">My jQuery Tutorial</p>
-<br><br>
+        <p class="toc-heading">My jQuery Tutorial</p>
+        <br><br>
 
-            <p class="toc-heading1">Basics</p>
-            <p class="toc-heading2">Basics</p>
+        <p class="toc-heading1">Basics</p>
+        <p class="toc-heading2">Basics</p>
+        <nav>
+            <ul class="main-nav">
+                <ul class="sub-nav">
+                    <li><a href="pages/basics/installing.html" target="_blank">Installing</a></li>
+                    <li><a href="pages/basics/syntax.html" target="_blank">Statement Syntax</a></li>
+                    <li><a href="pages/basics/targeting.html" target="_blank">Targeting elements</a></li>
+                </ul>
+            </ul>
+
+            <p class="toc-heading2">Code templates</p>
             <nav>
                 <ul class="main-nav">
 
                     <ul class="sub-nav">
-                        <li><a href="pages/basics/installing.html" target="_blank">Installing</a></li>
-                        <li><a href="pages/basics/syntax.html" target="_blank">Statement Syntax</a></li>
-                          <li><a href="pages/basics/targeting.html" target="_blank">Targeting elements</a></li>
+                        <li><a href="code-templates.html" target="_blank">Code Templates</a> - Red Notebox, Code examples, Breadcrumbs</li>
                     </ul>
                 </ul>
-
-                <p class="toc-heading2">Code templates</p>
-                <nav>
-                    <ul class="main-nav">
-
-                        <ul class="sub-nav">
-                            <li><a href="code-templates.html" target="_blank">Code Templates</a> - Red Notebox, Code examples, Breadcrumbs</li>
-                        </ul>
-                    </ul>
-
-
             </nav>
 
 
-            <p class="toc-heading1">Code Examples</p>
+            <p class="toc-heading1">Functions</p>
             <nav>
                 <ul class="main-nav">
-
                     <ul class="sub-nav">
-                      <li><a href="pages/code/addClass.html" target="_blank">addClass()</a> - adds a class to an element</li>
-                        <li><a href="pages/code/hide.html" target="_blank">hide()</a></li>
-                          <li><a href="pages/code/removeClass.html" target="_blank">removeClass()</a></li>
+                        <li><a href="pages/functions/addClass.html" target="_blank">addClass()</a> - adds a class to an element</li>
+                        <li><a href="pages/functions/html.html" target="_blank">html()</a> - changes the html of an element</li>
+                        <li><a href="pages/functions/removeClass.html" target="_blank">removeClass()</a></li>
+                        <li><a href="pages/functions/text.html" target="_blank">text()</a> - replace text for a specified element</li>
+                        <li><a href="pages/functions/val.html" target="_blank">val()</a> - returns or sets the value attribute of the selected element</li>
                     </ul>
                 </ul>
             </nav>
@@ -62,27 +59,43 @@
 
 
 
-            <p class="toc-heading1">Events and Effects</p>
+            <p class="toc-heading1">Events</p>
             <nav>
                 <ul class="main-nav">
-
                     <ul class="sub-nav">
-                      <li><a href="pages/events-effects/events-effects.html" target="_blank">Events and Effects</a>
-                      </li>
-
+                        <li><a href="https://www.w3schools.com/jquery/jquery_ref_events.asp" target="_blank">List of jQuery Events</a></li>
+                        <li><a href="pages/events/event-click.html" target="_blank">Click (click)</a> - runs on a single click</li>
+                        <li><a href="pages/events/event-dblclick.html" target="_blank">Double Click (dblclick) </a> - runs on a double click</li>
+                        <li><a href="pages/events/event-mouseenter.html" target="_blank">Mouse Enter (mouseenter)</a> - runs when the mouse is hovered</li>
                     </ul>
                 </ul>
             </nav>
 
 
-</section>
+            <p class="toc-heading1">Effects</p>
+            <nav>
+                <ul class="main-nav">
+                    <ul class="sub-nav">
+                        <li><a href="https://www.w3schools.com/jquery/jquery_ref_effects.asp" target="_blank">List of jQuery Effects</a></li>
+                        <li><a href="pages/effects/hide.html" target="_blank">hide()</a> - hides an element</li>
+                        <li><a href="pages/effects/effect-show.html" target="_blank">show()</a> - displays a hidden element</li>
+                        <li><a href="pages/effects/effects-toggle.html" target="_blank">toggle()</a> - Toggles between the hide() and show() methods</li>
+                        <li><a href="pages/effects/effects-slidedown.html" target="_blank">slideDown()</a> - Slides (and displays) the selected hidden element down on the page</li>
+                        <li><a href="pages/effects/effects-slideup.html" target="_blank">slideUp()</a> - Slides (and hides) the selected displayed element up on the page</li>
+                        <li><a href="pages/effects/effects-slidetoggle.html" target="_blank">slideToggle()</a> - Toggles between slideUp() and slideDown() for the selected elements</li>
+                    </ul>
+                </ul>
+            </nav>
+
+
+    </section>
 
 
 
 
 
 
-            <script src="_js/jquery-3.4.1.min.js"></script>
+    <script src="_js/jquery-3.4.1.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>The html() method</title>
+</head>
+
+<body>
+    <section class="container">
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb breadcrumb-container">
+              <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">The html() method</li>
+          </ol>
+      </nav>
+
+
+<h1>Changing HTML using the html() method</h1>
+
+    <p>The html() method changes the HTML of a specified element</p>
+    <p>It also adds a CSS class to the element.</p>
+
+<pre class="example">
+<span class="code-html">&lt;p class="dope"&gt; You'll learn how to replace me&lt;/p&gt;
+&lt;input type="button" value="Replace" id="btn_main" /&gt;</span>
+
+<span class="code-js">$('#btn_main').on('click', function() {
+  $('.dope').html('&lt;strong class="html-change-class"&gtl; HI! The HTML just changed. &lt;/strong&gt;');
+});</span></pre>
+
+
+    <h3>Example</h3>
+    <p class="dope"> You'll learn how to replace me </p>
+    <input type="button" value="Replace" id="btn_main" />
+
+
+
+
+
+
+
+    </section>
+
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+
+$('#btn_main').on('click', function(){
+  $('.dope').html('<strong class="html-change-class"> HI! The HTML just changed. </strong>');
+});
+
+
+    </script>
+
+</body>
+
+</html>
