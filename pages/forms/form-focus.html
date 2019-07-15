@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+
+    <title>Form-Focus</title>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Forms</li>
+            </ol>
+        </nav>
+
+
+        <h1>Forms</h1>
+        <p>When the first input field is focused on (clicked into), the text above it changes.</p>
+
+
+        <pre class="example">
+<span class="code-html">&lt;p id="city_display"&gt; Enter Location:&lt;/p&gt;
+
+&lt;form method="post"&gt;
+    Enter Zipcode:
+    &lt;input type="text" id="entered_zip"&gt; State And City:
+    &lt;input type="text" id="entered_city_state"&gt;
+    &lt;br&gt;
+&lt;/form&gt;
+&lt;button id="loc_button"&gt; Get Location &lt;/button&gt;</span>
+
+<span class="code-js">$('input#entered_zip').on('focus', function() {
+  $('p#city_display').text("About to type:");
+});</span></pre>
+
+
+        <h3>Example</h3>
+
+        <hr>
+        <p id="city_display"> Enter Location:</p>
+        <form method="post">
+            Enter Zipcode:
+            <input type="text" id="entered_zip"> State And City:
+            <input type="text" id="entered_city_state">
+            <br>
+        </form>
+        <button id="loc_button"> Get Location </button>
+    </section>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+
+    <script>
+//form #2
+//focus event
+//when user clicks on first text box, the title should change
+$('input#entered_zip').on('focus', function() {
+$('p#city_display').text("About to type:");
+});
+
+    </script>
+
+</body>
+
+</html>
