@@ -10,38 +10,38 @@
     <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_css/style.css">
 
-    <style>
-        .beautify {
-            background-color: yellow;
-            font-weight: bold;
-            color: green;
-            padding-left: 120px;
-        }
 
-        .blue_border {
-            border-style: dashed;
-            border-color: blue;
-            padding-top: 10px;
-            padding-left: 10px;
-            padding-bottom: 10px;
-        }
+        <style>
+            .beautify {
+                background-color: yellow;
+                font-weight: bold;
+                color: green;
+                padding-left: 120px;
+            }
 
-        .important {
-            color: red;
-            font-weight: bold;
-            font-size: 15px;
-        }
+            .blue_border {
+                border-style: dashed;
+                border-color: blue;
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-bottom: 10px;
+            }
 
-        #super {
-            border-style: dotted;
-            border-color: red;
-            padding-top: 50px;
-            padding-left: 50px;
-            padding-bottom: 50px;
-        }
-    </style>
+            .important {
+                color: red;
+                font-weight: bold;
+                font-size: 15px;
+            }
 
-    <title>Form-Focus</title>
+            #super {
+                border-style: dotted;
+                border-color: red;
+                padding-top: 50px;
+                padding-left: 50px;
+                padding-bottom: 50px;
+            }
+        </style>
+    <title>The 'this' keyword</title>
 </head>
 
 <body>
@@ -49,66 +49,44 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-container">
                 <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Forms</li>
+                <li class="breadcrumb-item active" aria-current="page">The 'this' keyword</li>
             </ol>
         </nav>
 
 
-        <h1>Adding inline styles to a single element</h1>
-        <p>This changes the text in a paragraph to red.</p>
+        <h1>The 'this' keyword</h1>
+        <p>The 'this' keyword allows you to pinpoint the exact element the user is interacting with.</p>
+        <p>For example, if you have two buttons, the 'this' keyword will only apply to the button that is clicked on my the user, not the other button.</p>
+        <p>This example shows two buttons and an event inside another event.</p>
+
 
 
         <pre class="example">
-<span class="code-html">&lt;p class="beautify"&gt; Exercise is a good habit to get into&lt;/p&gt;
-&lt;p&gt; Australia has a lot of kangaroos &lt;/p&gt;
-&lt;p class="boot"&gt; Computers are cool &lt;/p&gt;
+<span class="code-html">&lt;button type="button"&gt;Button 1&lt;/button&gt;
+&lt;button type="button"&gt;Button 2&lt;/button&gt;</span>
 
-&lt;button type="button"&gt;Style Paragraphs&lt;/button&gt;
-&lt;button type="button"&gt;Some extra button&lt;/button&gt;</span>
+<span class="code-js">
+<span class="code-comment">//target the button element</span>
+$('button').on('click', function() {
+  <span class="code-comment">//Since you've already targeted the button element, you can use
+  //the 'this' keyword in the function to refer to it</span>
+  $(this).addClass('beautify');
 
-<span class="code-js">$('p.boot').css('color', 'red');</span></pre>
-
-
-        <h3>Example</h3>
-        <p class="beautify"> Exercise is a good habit to get into</p>
-        <p> Australia has a lot of kangaroos </p>
-        <p class="boot"> Computers are cool </p>
-
-        <button type="button">Style Paragraphs</button>
-        <button type="button">Some extra button</button>
-
-
-
-
-
-
-
-        <h1>Adding inline styles to a single element</h1>
-        <p>This changes multiple CSS valaues use a map of key value pairs.</p>
-
-
-        <pre class="example">
-<span class="code-html">&lt;p class="beautify"&gt; Exercise is a good habit to get into&lt;/p&gt;
-&lt;p&gt; Australia has a lot of kangaroos &lt;/p&gt;
-&lt;p class="boot"&gt; Computers are cool &lt;/p&gt;
-
-&lt;button type="button"&gt;Style Paragraphs&lt;/button&gt;
-&lt;button type="button"&gt;Some extra button&lt;/button&gt;</span>
-
-<span class="code-js">$('p.boot2').css({
-    'color': 'white',
-    'background-color': 'grey',
-    'font-family': 'arial, helvetica, sans-serif'
+  <span class="code-comment">//create another event within this event
+  //This event only runs when the parent event is run
+  //The 'this' keyword applies to the single element you're interacting with
+  //If there's more than 1 button, only the one you click is changed</span>
+  $(this).on('dblclick', function() {
+    $(this).addClass('blue_border');
+  });
 });</span></pre>
 
 
         <h3>Example</h3>
-        <p class="beautify"> Exercise is a good habit to get into</p>
-        <p> Australia has a lot of kangaroos </p>
-        <p class="boot2"> Computers are cool </p>
-
-        <button type="button">Style Paragraphs</button>
-        <button type="button">Some extra button</button>
+        <p>Click a button once to change its CSS.</p>
+        <p>Double click it to change it again.</p>
+        <button type="button">Button 1</button>
+        <button type="button">Button 2</button>
 
     </section>
 
@@ -116,19 +94,21 @@
     <script src="../../_js/jquery-3.4.1.min.js"></script>
 
     <script>
-        //Single change
-        //inline styling
-        //changes the text color to red for this element
-        $('p.boot').css('color', 'red');
 
-        //Multiple changes
-        //passing in a map of keys and values to change
-        //the key is the attribute
-        $('p.boot2').css({
-            'color': 'white',
-            'background-color': 'grey',
-            'font-family': 'arial, helvetica, sans-serif'
+
+//Since you've already targeted the button element, you can use
+//the 'this' keyword in the function to refer to it
+        $('button').on('click', function() {
+          $(this).addClass('beautify');
+          //create another event within this event
+          //This event only runs when the parent event is run
+          //This only applies to the single element you're interacting with
+          //If there's more than 1 button, only the one you click is changed
+          $(this).on('dblclick', function() {
+            $(this).addClass('blue_border');
+          });
         });
+
     </script>
 
 </body>
