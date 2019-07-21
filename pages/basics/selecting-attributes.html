@@ -10,26 +10,26 @@
     <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_css/style.css">
 
-<style>
-#big{
-  font-size: 2em;
-  font-weight: bold
-}
+    <style>
+        #big {
+            font-size: 2em;
+            font-weight: bold
+        }
 
-#small{
-  font-size: 1em;
-}
+        #small {
+            font-size: 1em;
+        }
 
-.pretty{
-  color: pink;
-  font-style: italic;
-}
+        .pretty {
+            color: pink;
+            font-style: italic;
+        }
 
-.border{
-  border-style: dashed;
-  border-color: green;
-}
-</style>
+        .border {
+            border-style: dashed;
+            border-color: green;
+        }
+    </style>
     <title>Selecting attributes</title>
 </head>
 
@@ -66,10 +66,6 @@ $('p.instruct_title, div#closing_statement').css('color', 'green');</span></pre>
         <div id="closing_statement1">
             <p>This ID is changed to green.</p>
         </div>
-
-
-
-
 
 
 
@@ -137,7 +133,7 @@ $("p.instruct_title").add("div#closing_statement").css("color", "green");</span>
 
 
         <h3>Example</h3>
-            <ul id="steps">
+        <ul id="steps">
             <li class="important">Park Vehicle Safely</li>
             <li>Retrieve Jack and attach to vehicle frame</li>
             <li>untighten tire bolts</li>
@@ -147,43 +143,142 @@ $("p.instruct_title").add("div#closing_statement").css("color", "green");</span>
             <li>Lower vehicle and tighten bolts completely</li>
         </ul>
 
+
+
+
+
+
+
+
+
+
+        <h1>Add 2 classes to an element</h1>
+        <p>Target with attr(), then add the second class in the same parenthesis.</p>
+
+        <pre class="example">
+<span class="code-html">&lt;p id="title"&gt;Add 2 classes to me when clicked&lt;/p&gt;
+
+<span class="code-js">$("h1#title").on("click", function(){
+    $(this).attr("class", "pretty border");
+});</pre>
+
+        <h3>Example</h3>
+        <p id="title">Add 2 classes to me when clicked</p>
+
+
+
+
+
+
+
+
+        <h1>Assign CSS attributes in JS</h1>
+        <p>This assigns CSS key values within the jQuery directly.</p>
+        <p>The multiple CSS values are chained together into a single attr() call.</p>
+        <div class="alert alert-note">
+            <div class="alert-icon">
+                <img src="../../_img/icons/note-icon.png" width="60" height="60">
+            </div>
+            <div class="alert-content">
+                <p>NOTE: This only works on an image. Why?</p>
+            </div>
+        </div>
+
+        <pre class="example"><span class="code-html">&lt;img id="the_img"  src="img/man_changing_tire.jpg" width="20%" height="20%"&gt;
+
+<span class="code-js">$("img#the_img").on("click", function(){
+    $(this).attr({"width": "40%",
+                  "length": "40%"
+                });
+});</pre>
+
+        <h3>Example</h3>
+
+        <img id="the_img" src="../../_img/man_changing_tire.jpg" width="20%" height="20%" />
+
+
+
+
+
+
+
+
+        <h1>Remove element using remove()</h1>
+        <p>Target with attr(), then add the second class in the same parenthesis.</p>
+
+        <pre class="example"><span class="code-html">&lt;p id="title"&gt;Click once to add CSS. Double click to remove&lt;/p&gt;
+
+<span class="code-js">$("p#title").on("click", function() {
+      $(this).attr("class", "pretty border");
+  });
+
+  $("p#remove_css").on("dblclick", function(){
+    $(this).remove();
+});</pre>
+
+        <h3>Example</h3>
+        <p id="title2">Remove CSS on double click</p>
+
+
+
+
+
+
+
+  <h1>Remove attribute using removeAttr()</h1>
+        <p>You can also remove a specific attribute using removeAttr()</p>
+        <p>Double Click to remove the src attribute.</p>
+
+<pre class="example"><span class="code-html">&lt;img id="the_img"  src="img/man_changing_tire.jpg" width="20%" height="20%"&gt;
+
+<span class="code-js">$('img#the_img').on('dblclick', function(){
+  $(this).removeAttr("src");
+});</pre>
+
+        <img id="the_img2" src="../../_img/man_changing_tire.jpg" width="20%" height="20%" />
+
     </section>
-
-
-
-
-
 
 
     <script src="../../_js/jquery-3.4.1.min.js"></script>
 
     <script>
-//Select multiple attributes in the same call
-$('p.instruct_title1, div#closing_statement1').css('color', 'green');
+        //Select multiple attributes in the same call
+        $('p.instruct_title1, div#closing_statement1').css('color', 'green');
 
-$("p.instruct_title2").add("div#closing_statement2").css("color", "green");
+        $("p.instruct_title2").add("div#closing_statement2").css("color", "green");
 
 
-    $("li.important").on("mouseover", function(){
-        $(this).attr("id", "big");
-        $(this).on("mouseleave", function(){
-            $(this).attr("id", "small");
+        $("li.important").on("mouseover", function() {
+            $(this).attr("id", "big");
+            $(this).on("mouseleave", function() {
+                $(this).attr("id", "small");
+            });
         });
-    });
-/*
-    $("h1#title").on("click", function(){
-        $(this).attr("class", "pretty border");
-    });
 
-    $("img#the_img").on("click", function(){
-        $(this).attr({"width": "40%", "length": "40%"});
-    });
+        $("p#title").on("click", function() {
+            $(this).attr("class", "pretty border");
+        });
 
-    $("img#the_img").on("dblclick", function(){
-        $(this).remove();
-    });
-*/
+        $("#the_img").on("click", function() {
+            $(this).attr({
+                "width": "40%",
+                "length": "40%"
+            });
+        });
 
+        $("p#title2").on("click", function() {
+            $(this).attr("class", "pretty border");
+        });
+
+        $("p#title2").on("dblclick", function() {
+            $(this).attr("class", "pretty border");
+            $(this).remove();
+        });
+
+        $('img#the_img2').on('dblclick', function(){
+                    $(this).removeAttr("src");
+                  });
     </script>
 
 </body>
