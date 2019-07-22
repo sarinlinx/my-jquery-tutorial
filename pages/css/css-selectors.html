@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_css/style.css">
 
-    <title>lkjlkjlkjlkjkn</title>
+    <title>CSS selectors</title>
 </head>
 
 <body>
@@ -18,59 +18,200 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-container">
                 <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dljklkjction</li>
+                <li class="breadcrumb-item active" aria-current="page">CSS selectors</li>
             </ol>
         </nav>
 
 
 
-        <h1>Dolkjlkjn</h1>
-<p>Youlkjljll use the Document Ready Function to only run it once the document has loaded.</p>
+        <h1>jQuery selectors</h1>
+<p><a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">jQuery selectors</a></p>
 
-<h1 id="title">Instructions for Changing Tire</h1>
 
-<img id="the_img"  src="img/man_changing_tire.jpg" width="20%" height="20%"/>
-<h3>How to Change Tire</h3>
-<p> We'll go over the steps for changing a tire </p>
-<p class="instruct_title">Incase of flat tire.</p>
-<ul id="steps">
-    <li class="important">Park Vehicle Safely</li>
-    <li>Retrieve Jack and attach to vehicle frame</li>
-    <li>untighten tire bolts</li>
-    <li class="important">Raise Vehicle by cranking jack</li>
-    <li>Unscrew Bolts and Attach Replacement tire</li>
-    <li class="important">Tighten the bolts</li>
-    <li>Lower vehicle and tighten bolts completely</li>
+
+
+
+
+
+
+
+        <h1>Target only the list elements in a list</h1>
+
+        <p>Target the ID of the list, add a space, then select the li items.</p>
+        <pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+  &lt;li&gt;Step 1&lt;/li&gt;
+  &lt;li&gt;Step 2&lt;/li&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$('#steps li').css('color', 'yellow');</span></pre>
+
+        <h3>Example</h3>
+        <ul id="steps1">
+            <li>Step 1</li>
+            <li>Step 2</li>
+        </ul>
+
+
+
+
+
+
+        <h1>Target a nested list</h1>
+        <p>Target the direct descendents using the &gt; sign.</p>
+        <p>This ensures only the immediate descendants of the element with an ID of steps are targeted.</p>
+
+<pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+    &lt;li&gt;Step 1&lt;/li&gt;
+    &lt;li&gt;Step 2&lt;/li&gt;
+      &lt;ul id="nested_steps"&gt;
+        &lt;li&gt;nested item 1&lt;/li&gt;
+        &lt;li&gt;nested item 1&lt;/li&gt;
+      &lt;/ul&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$('#steps > li').css('color', 'yellow');</span></pre>
+
+        <h3>Example</h3>
+        <ul id="steps2">
+          <li>Step 1</li>
+          <li>Step 2</li>
+          <ul id="nested_steps">
+          <li>nested item 1</li>
+            <li>nested item 1</li>
+            </ul>
+      </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+      <h1>Target only the first item in a list using a Filter</h1>
+      <p>The filter would be li:first. This targets the first list item.</p>
+      <p>You could also use li:last</p>
+
+<pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+  &lt;li&gt;Step 1&lt;/li&gt;
+  &lt;li&gt;Step 2&lt;/li&gt;
+    &lt;ul id="nested_steps"&gt;
+      &lt;li&gt;nested item 1&lt;/li&gt;
+      &lt;li&gt;nested item 1&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$('#steps > li:first').css('color', 'yellow');</span></pre>
+
+      <h3>Example</h3>
+      <ul id="steps3">
+        <li>Step 1</li>
+        <li>Step 2</li>
+        <ul id="nested_steps">
+        <li>nested item 1</li>
+          <li>nested item 1</li>
+          </ul>
+    </ul>
+
+
+
+
+    <h1>Target only the first items in both lists</h1>
+    <p>Separate call to each item with a comma</p>
+
+<pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+&lt;li&gt;Step 1&lt;/li&gt;
+&lt;li&gt;Step 2&lt;/li&gt;
+  &lt;ul id="nested_steps"&gt;
+    &lt;li&gt;nested item 1&lt;/li&gt;
+    &lt;li&gt;nested item 1&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$('#steps li:first, #nested_steps li:first').css('color', 'yellow');</span></pre>
+
+    <h3>Example</h3>
+    <ul id="steps4">
+      <li>Step 1</li>
+      <li>Step 2</li>
+      <ul id="nested_steps4">
+      <li>nested item 1</li>
+        <li>nested item 1</li>
+        </ul>
+  </ul>
+
+
+
+
+
+
+  <h1>Target specific list item</h1>
+  <p>Use nth-child(#) to target</p>
+  <p>This selects the 3rd item</p>
+
+<pre class="example"><span class="code-html">&lt;ul id="steps"&gt;
+&lt;li&gt;Step 1&lt;/li&gt;
+&lt;li&gt;Step 2&lt;/li&gt;
+&lt;li&gt;Step 3&lt;/li&gt;
+&lt;ul id="nested_steps"&gt;
+  &lt;li&gt;nested item 1&lt;/li&gt;
+  &lt;li&gt;nested item 1&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/ul&gt;</span>
+
+<span class="code-js">$('#steps li:nth-child(3)').css('color', 'yellow');</span></pre>
+
+  <h3>Example</h3>
+  <ul id="steps5">
+    <li>Step 1</li>
+    <li>Step 2</li>
+    <li>Step 3</li>
+    <ul id="nested_steps5">
+    <li>nested item 1</li>
+      <li>nested item 1</li>
+      </ul>
 </ul>
-<div id="closing_statement">
-    <p>Make sure to put away the tools</p>
-</div>
 
 
+
+
+
+
+
+
+
+<h1>Target all elements that contain a specific attribute</h1>
+<p>You can target all elements that contain a specific attribute using []</p>
+<p>For example, to target all paragraphs that have a class assigned to them use <span class="standout">p[class]</span>.</p>
+
+<pre class="example"><span class="code-html">&lt;p class="class1"&gt;I'm a paragraph with a class&lt;/p&gt;
+&lt;p class="class2"&gt;Me too!&lt;/p&gt;
+&lt;p&gt;I don't have a class&lt;/p&gt;</span>
+
+<span class="code-js">$('p[class]').css({'border': '1px solid red'});</span></pre>
 
 <h3>Example</h3>
-        <pre class="example"><span class="code-js">ljlkjljklj</span>
-
-});</pre>
-
-
-
-
-
-
-
-
-
+<p class="class1">I'm a paragraph with a class</p>
+<p class="class2">Me too!</p>
+<p>I don't have a class</p>
 
 
 
 
     </section>
-
-
     <script src="../../_js/jquery-3.4.1.min.js"></script>
-
     <script>
+        $('#steps1 li').css('color', 'yellow');
+        $('#steps2 > li').css('color', 'yellow');
+        $('#steps3 > li:first').css('color', 'yellow');
+        $('#steps4 li:first, #nested_steps4 li:first').css('color', 'yellow');
+        $('#steps5 li:nth-child(3)').css('color', 'yellow');
+        $('p[class]').css({'border': '1px solid red'});
+
     </script>
 
 </body>
