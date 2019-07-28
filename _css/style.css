@@ -71,7 +71,7 @@ h3 {
   background: linear-gradient(to right, #65e470 0%, #000b1d 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border-bottom: 1px solid #eee;
+  /* border-bottom: 1px solid #eee; */
 }
 
 h4 {

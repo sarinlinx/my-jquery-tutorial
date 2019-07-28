@@ -30,7 +30,7 @@
             border-color: green;
         }
     </style>
-    <title>Selecting attributes</title>
+    <title>attr()</title>
 </head>
 
 <body>
@@ -38,70 +38,9 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-container">
                 <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Selecting attributes</li>
+                <li class="breadcrumb-item active" aria-current="page">attr()</li>
             </ol>
         </nav>
-
-
-        <h1>Selecting multiple attribute/value pairs in a single call</h1>
-        <p>The attribute would be id= or class= and the value would be it's ID or Class name.</p>
-        <p>This single line selects multiple attributes/values and changes their CSS.</p>
-
-
-
-        <pre class="example">
-<span class="code-html">&lt;p&gt; This is not changed &lt;/p&gt;
-&lt;p class="instruct_title"&gt;Incase of flat tire.&lt;/p&gt;
-&lt;div id="closing_statement"&gt;
-    &lt;p&gt;Make sure to put away the tools&lt;/p&gt;
-&lt;/div&gt;</span>
-
-<span class="code-js"><span class="code-comment">//Select multiple attributes in the same call</span>
-$('p.instruct_title, div#closing_statement').css('color', 'green');</span></pre>
-
-
-        <h3>Example</h3>
-        <p> This is not changed </p>
-        <p class="instruct_title1">This class is changed to green.</p>
-        <div id="closing_statement1">
-            <p>This ID is changed to green.</p>
-        </div>
-
-
-
-
-
-
-
-
-
-
-        <h1>Selecting multiple attribute/value pairs using .add</h1>
-        <p>Using the .add method to select multiple key/values is faster for the computer to process.</p>
-
-
-        <pre class="example">
-<span class="code-html">&lt;p&gt; This is not changed &lt;/p&gt;
-&lt;p class="instruct_title"&gt;Incase of flat tire.&lt;/p&gt;
-&lt;div id="closing_statement"&gt;
-    &lt;p&gt;Make sure to put away the tools&lt;/p&gt;
-&lt;/div&gt;</span>
-
-<span class="code-js"><span class="code-comment">//Select multiple attributes split us by .add</span>
-$("p.instruct_title").add("div#closing_statement").css("color", "green");</span></pre>
-
-
-        <h3>Example</h3>
-        <p> This is not changed </p>
-        <p class="instruct_title2">This class is changed to green.</p>
-        <div id="closing_statement2">
-            <p>This ID is changed to green.</p>
-        </div>
-
-
-
-
-
 
 
 
@@ -200,42 +139,6 @@ $("p.instruct_title").add("div#closing_statement").css("color", "green");</span>
 
 
 
-
-
-
-        <h1>Remove element using remove()</h1>
-        <p>Target with attr(), then add the second class in the same parenthesis.</p>
-
-        <pre class="example"><span class="code-html">&lt;p id="title"&gt;Click once to add CSS. Double click to remove&lt;/p&gt;
-
-<span class="code-js">$("p#title").on("click", function() {
-      $(this).attr("class", "pretty border");
-  });
-
-  $("p#remove_css").on("dblclick", function(){
-    $(this).remove();
-});</pre>
-
-        <h3>Example</h3>
-        <p id="title2">Remove CSS on double click</p>
-
-
-
-
-
-
-
-  <h1>Remove attribute using removeAttr()</h1>
-        <p>You can also remove a specific attribute using removeAttr()</p>
-        <p>Double Click to remove the src attribute.</p>
-
-<pre class="example"><span class="code-html">&lt;img id="the_img"  src="img/man_changing_tire.jpg" width="20%" height="20%"&gt;
-
-<span class="code-js">$('img#the_img').on('dblclick', function(){
-  $(this).removeAttr("src");
-});</pre>
-
-        <img id="the_img2" src="../../_img/man_changing_tire.jpg" width="20%" height="20%" />
 
     </section>
 
