@@ -24,11 +24,11 @@
 
 
 
-<h1>.append()</h1>
-<p>This appends something to an element.</p>
-<p>This example appends another list item to the list</p>
+        <h1>.append() to pass in a string</h1>
+        <p>This appends something to an element.</p>
+        <p>This example appends another list item to the list</p>
 
-<pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+        <pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
 &lt;div&gt;
     &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
     that can be enrolled in this semester:
@@ -59,47 +59,226 @@
   $("#courses").append("&lt;li&gt;&lt;strong&gt;New Course&lt;/strong&gt;&lt;/li&gt;")
 });</span></pre>
 
-<h3>Example</h3>
-<h3>Below is a list of course offerings to choose from</h3>
-<div>
-    <p>Below is a list of all the available courses <br>
+        <h3>Example</h3>
+        <h3>Below is a list of course offerings to choose from</h3>
+        <div>
+            <p>Below is a list of all the available courses <br> that can be enrolled in this semester:
+            </p>
+        </div>
+        <ul id="courses">
+            <li>Sociology</li>
+            <li>Psychology</li>
+            <li>Mathematics
+                <ul id="math_subjects">
+                    <li>Algebra</li>
+                    <li>Geometry</li>
+                    <li>Calculus</li>
+                </ul>
+            </li>
+            <li>Sciences
+                <ul id="science_subjects">
+                    <li>Geology</li>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                </ul>
+            </li>
+            <li>World History</li>
+        </ul>
+
+        <button id="btn1">Click me</button>
+
+
+
+
+
+
+
+
+
+
+        <h1>append() to pass in a variable</h1>
+        <p>This example appends an Object item to the list</p>
+        <p>You could also pass in a variable string</p>
+        <p>Put a $ sign before the Object name as a convention</p>
+
+        <pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+&lt;div&gt;
+    &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
     that can be enrolled in this semester:
-    </p>
-</div>
-<ul id="courses">
-  <li>Sociology</li>
-  <li>Psychology</li>
-  <li>Mathematics
-    <ul id="math_subjects">
-    <li>Algebra</li>
-    <li>Geometry</li>
-    <li>Calculus</li>
-    </ul>
-  </li>
-  <li>Sciences
-      <ul id="science_subjects">
-      <li>Geology</li>
-      <li>Physics</li>
-      <li>Chemistry</li>
-      </ul>
-  </li>
-  <li>World History</li>
-</ul>
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id="courses"&gt;
+  &lt;li&gt;Sociology&lt;/li&gt;
+  &lt;li&gt;Psychology&lt;/li&gt;
+  &lt;li&gt;Mathematics
+    &lt;ul id="math_subjects"&gt;
+    &lt;li&gt;Algebra&lt;/li&gt;
+    &lt;li&gt;Geometry&lt;/li&gt;
+    &lt;li&gt;Calculus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sciences
+      &lt;ul id="science_subjects"&gt;
+      &lt;li&gt;Geology&lt;/li&gt;
+      &lt;li&gt;Physics&lt;/li&gt;
+      &lt;li&gt;Chemistry&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;World History&lt;/li&gt;
+&lt;/ul&gt;
+</span>
 
-<button id="btn1">Click me</button>
+<span class="code-js">$("#btn2").click(function() {
+  <span class="code-comment">//create the object</span>
+  var $newCourse = $("&lt;li&gt;&lt;strong&gt; Trig &lt;/strong&gt;&lt;/li&gt;");
+  <span class="code-comment">//add to page</span>
+  $("#math_subjects2").append(newCourse)
+});</span></pre>
+
+        <h3>Example</h3>
+        <h3>Below is a list of course offerings to choose from</h3>
+        <div>
+            <p>Below is a list of all the available courses <br> that can be enrolled in this semester:
+            </p>
+        </div>
+        <ul id="courses2">
+            <li>Sociology</li>
+            <li>Psychology</li>
+            <li>Mathematics
+                <ul id="math_subjects2">
+                    <li>Algebra</li>
+                    <li>Geometry</li>
+                    <li>Calculus</li>
+                </ul>
+            </li>
+            <li>Sciences
+                <ul id="science_subjects">
+                    <li>Geology</li>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                </ul>
+            </li>
+            <li>World History</li>
+        </ul>
+
+        <button id="btn2">Click me</button>
 
 
+
+
+
+        <h1>prepend()</h1>
+        <p>Same as .append(), but it adds to the beginning</p>
+
+
+        <h1>.after() </h1>
+        <p>This adds the elmeent after the targeted element</p>
+
+        <h1>.before()</h1>
+        <p>Adds the element before the targeted element</p>
+
+
+
+
+
+
+
+
+
+
+        <h1>append() an h3 tag</h1>
+        <p>This appends an h3 tag using the jQuery selector</p>
+        <p>This moves the h3 tag below the specified elemetn</p>
+
+        <pre class="example"><span class="code-html">&lt;h3&gt;Below is a list of course offerings to choose from&lt;/h3&gt;
+&lt;div&gt;
+    &lt;p&gt;Below is a list of all the available courses &lt;br&gt;
+    that can be enrolled in this semester:
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;ul id="courses"&gt;
+  &lt;li&gt;Sociology&lt;/li&gt;
+  &lt;li&gt;Psychology&lt;/li&gt;
+  &lt;li&gt;Mathematics
+    &lt;ul id="math_subjects"&gt;
+    &lt;li&gt;Algebra&lt;/li&gt;
+    &lt;li&gt;Geometry&lt;/li&gt;
+    &lt;li&gt;Calculus&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Sciences
+      &lt;ul id="science_subjects"&gt;
+      &lt;li&gt;Geology&lt;/li&gt;
+      &lt;li&gt;Physics&lt;/li&gt;
+      &lt;li&gt;Chemistry&lt;/li&gt;
+      &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;World History&lt;/li&gt;
+&lt;/ul&gt;
+</span>
+
+<span class="code-js">$("#btn2").click(function() {
+  <span class="code-comment">//create the object</span>
+  var newCourse = $("&lt;li&gt;&lt;strong&gt; Trig &lt;/strong&gt;&lt;/li&gt;");
+  <span class="code-comment">//add to page</span>
+  $("#math_subjects2").append(newCourse)
+});</span></pre>
+
+        <h3>Example</h3>
+        <h3 id="justThish3">Below is a list of course offerings to choose from</h3>
+        <div>
+            <p>Below is a list of all the available courses <br> that can be enrolled in this semester:
+            </p>
+        </div>
+        <ul id="courses2">
+            <li>Sociology</li>
+            <li>Psychology</li>
+            <li>Mathematics
+                <ul id="math_subjects3">
+                    <li>Algebra</li>
+                    <li>Geometry</li>
+                    <li>Calculus</li>
+                </ul>
+            </li>
+            <li>Sciences
+                <ul id="science_subjects">
+                    <li>Geology</li>
+                    <li>Physics</li>
+                    <li>Chemistry</li>
+                </ul>
+            </li>
+            <li>World History</li>
+        </ul>
+
+        <button id="btn3">Click me</button>
+
+
+
+
+
+<h1>remove()</h1>
+<p>The hide() method just adds a style attribute so youcannot see the Object, but it's still there.</p>
+<p>The remove() method removes the Object from the page</p>
 
 
 
     </section>
     <script src="../../_js/jquery-3.4.1.min.js"></script>
     <script>
-
-    $("#btn1").click(function() {
-        $("#courses").append("<li><strong>New Course</strong></li>")
+        $("#btn1").click(function() {
+            $("#courses").append("<li><strong>New Course</strong></li>")
         });
 
+        $("#btn2").click(function() {
+            //create the object
+            var newCourse = $("<li><strong> Trig </strong></li>");
+            //add to page
+            $("#math_subjects2").append(newCourse)
+        });
+
+        $("#btn3").click(function() {
+            $("#math_subjects3").append($("h3#justThish3"));
+        });
     </script>
 </body>
 
