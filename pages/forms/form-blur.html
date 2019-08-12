@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_css/style.css">
 
-    <title>Form-Focus</title>
+    <title>blur</title>
 </head>
 
 <body>
@@ -18,43 +18,16 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb breadcrumb-container">
                 <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Forms</li>
+                <li class="breadcrumb-item active" aria-current="page">blur</li>
             </ol>
         </nav>
 
 
-        <h1>.on("focus", function()</h1>
-        <p>When the first input field is focused on (clicked into), the text above it changes.</p>
-
-
-        <pre class="example">
-<span class="code-html">&lt;p id="city_display"&gt; Enter Location:&lt;/p&gt;
-
-&lt;form method="post"&gt;
-    &lt;input type="text" id="entered_zip"&gt;
-&lt;/form&gt;</span>
-
-<span class="code-js">$('input#entered_zip').on('focus', function() {
-  $('p#city_display').text("About to type:");
-});</span></pre>
-
-
-        <h3>Example</h3>
-
-        <hr>
-        <p id="city_display"> Enter Location:</p>
-        <form method="post">
-
-            <input type="text" id="entered_zip">
-            <br>
-        </form>
 
 
 
-
-
-        <h1>focus()</h1>
-        <p>When the first input field is focused on (clicked into), the text background color changes.</p>
+        <h1>blur()</h1>
+        <p>The blur() method fires after the focused input field is left (loses focus).</p>
 
 
         <pre class="example"><span class="code-html">&lt;p id="city_display"&gt; Enter Location:&lt;/p&gt;
@@ -70,41 +43,25 @@
 
         <h3>Example</h3>
 
-        <hr>
-        <p > Click into input field to change its color</p>
+        <p> Click into input field to change its color (focus)</p>
+        <p>Click out of it to blur() (lose focus)</p>
         <form method="post">
-
             <input type="text" id="input1">
-            <br>
         </form>
 
-
-
-
-
-
-
     </section>
-
-
-
-
-
 
 
 
     <script src="../../_js/jquery-3.4.1.min.js"></script>
 
     <script>
-//form #2
-//focus event
-//when user clicks on first text box, the title should change
-$('input#entered_zip').on('focus', function() {
-$('p#city_display').text("About to type:");
-});
 
 $("input#input1").focus(function(){
   $(this).css("background-color", "yellow");
+});
+$("input#input1").blur(function(){
+  $(this).css("background-color", "green");
 });
 
     </script>
