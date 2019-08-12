@@ -23,7 +23,30 @@
       </nav>
 
 
-<h1>The 'click' event</h1>
+
+
+      <h1>.click()</h1>
+
+          <p>The .click() method fires when something is clicked.</p>
+
+
+      <pre class="example"><span class="code-html">&lt;p class="p1"&gt;If you click on me, I will disappear.&lt;/p&gt;
+&lt;p class="p1"&gt;Click me away!&lt;/p&gt;
+&lt;p class="p1"&gt;Click me too!&lt;/p&gt;</span>
+
+<span class="code-js">$("p.p1").click(function(){
+  $(this).hide();
+});</span></pre>
+
+          <h3>Example</h3>
+          <p class="p1">If you click on me, I will disappear.</p>
+    <p class="p1">Click me away!</p>
+    <p class="p1">Click me too!</p>
+
+
+
+
+<h1>.on('click', function()</h1>
 
     <p>When the user clicks the button, the paragraph disappears.</p>
 
@@ -62,6 +85,10 @@
     <script src="../../_js/jquery-3.4.1.min.js"></script>
 
     <script>
+    $("p.p1").click(function(){
+  $(this).hide();
+});
+
     $('#firstBtn').on("click", function() {
       //code to be executed when the button is clicked
       $('p#statement').hide();
