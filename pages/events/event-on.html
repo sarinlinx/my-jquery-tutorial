@@ -26,22 +26,26 @@
 
 
         <h1>on()</h1>
-        <p>attaches one or more event handlers for the selected elements.</p>
+        <p>The on() method attaches one or more event handlers for the selected elements.</p>
 
 
-        <pre class="example"><span class="code-html">&lt;p id="city_display"&gt; Enter Location:&lt;/p&gt;
+        <pre class="example"><span class="code-html">&lt;p id="p1"&gt;Click or move the mouse pointer over this paragraph.&lt;/p&gt;</span>
 
-&lt;form method="post"&gt;
-&lt;input type="text" id="entered_zip"&gt;
-&lt;/form&gt;</span>
-
-<span class="code-js">$("input#input1").focus(function(){
-  $(this).css("background-color", "yellow");
+<span class="code-js">$("p#p1").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "green");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
 });</span></pre>
 
 
         <h3>Example</h3>
-        <p>Click or move the mouse pointer over this paragraph.</p>
+        <p id="p1">Click or move the mouse pointer over this paragraph.</p>
 
     </section>
 
@@ -51,12 +55,12 @@
 
     <script>
 
-    $("p").on({
+    $("p#p1").on({
       mouseenter: function(){
         $(this).css("background-color", "lightgray");
       },
       mouseleave: function(){
-        $(this).css("background-color", "lightblue");
+        $(this).css("background-color", "green");
       },
       click: function(){
         $(this).css("background-color", "yellow");
