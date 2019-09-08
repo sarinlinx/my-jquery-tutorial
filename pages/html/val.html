@@ -23,6 +23,48 @@
       </nav>
 
 
+<h1>Get the val()</h1>
+
+<pre class="example">
+<span class="code-html">&lt;p&gt;Name: &lt;input type="text" id="test" value="Mickey Mouse"&gt;&lt;/p&gt;
+&lt;button id="btn1"&gt;Show Value&lt;/button&gt;</span>
+
+<span class="code-js">$("button#btn1").click(function(){
+  alert("Value: " + $("#test").val());
+});</span></pre>
+
+
+    <h3>Example</h3>
+    <p>Name: <input type="text" id="test" value="Mickey Mouse"></p>
+    <button id="btn1">Show Value</button>
+
+
+
+
+
+
+
+
+    <h1>Set the val()</h1>
+
+    <pre class="example"><span class="code-html">&lt;p&gt;Input field: &lt;input type="text" id="test3" value="Mickey Mouse"&gt;&lt;/p&gt;
+    &lt;button id="btn3"&gt;Set Value&lt;/button&gt;</span>
+
+    <span class="code-js">  $("#btn3").click(function(){
+    $("#test3").val("Dolly Duck");
+  });</span></pre>
+
+
+        <h3>Example</h3>
+<p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+<button id="btn3">Set Value</button>
+
+
+
+
+
+
+
 
     <h1>Targeting a value using val()</h1>
         <p>This changes the text of a button by targeting the 'value' of it in HTML.</p>
@@ -68,6 +110,15 @@ $('#btn_main2').on('click', function(){
   $('.dope2').text('This is new text.');
   $('#btn_main2').val('Double Click Me');
 
+});
+
+
+$("button#btn1").click(function(){
+  alert("Value: " + $("#test").val());
+});
+
+$("#btn3").click(function(){
+  $("#test3").val("Dolly Duck");
 });
 
     </script>

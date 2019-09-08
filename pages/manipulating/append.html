@@ -21,6 +21,47 @@
             </ol>
         </nav>
 
+<h1>Append text to sentence</h1>
+<p>This appends text to an existing paragraph</p>
+
+  <pre class="example"><span class="code-html">&lt;p id="appendp1"&gt;This is a paragraph.&lt;/p&gt;
+  &lt;button id="btn1append"&gt;Append text&lt;/button&gt;</span>
+
+    <span class="code-js">$("#btn1append").click(function(){
+    $("p#appendp1").append(" <b>Appended text</b>.");
+  });</span></pre>
+
+    <h3>Example</h3>
+<p id="appendp1">This is a paragraph.</p>
+<button id="btn1append">Append text</button>
+
+
+
+<h1>Append item to list</h1>
+
+  <pre class="example"><span class="code-html">&lt;ol id="appendol2"&gt;
+    &lt;li&gt;List item 1&lt;/li&gt;
+    &lt;li&gt;List item 2&lt;/li&gt;
+    &lt;li&gt;List item 3&lt;/li&gt;
+  &lt;/ol&gt;
+  &lt;button id="btn2append"&gt;Append list items&lt;/button&gt;</span>
+
+    <span class="code-js">$("#btn2append").click(function(){
+      $("ol#appendol2").append("<li>Appended item</li>");
+    });</span></pre>
+
+    <h3>Example</h3>
+    <ol id="appendol2">
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+    </ol>
+<button id="btn2append">Append list items</button>
+
+
+
+
+
 
 
 
@@ -165,27 +206,6 @@
 
 
 
-
-
-        <h1>prepend()</h1>
-        <p>Same as .append(), but it adds to the beginning</p>
-
-
-        <h1>.after() </h1>
-        <p>This adds the elmeent after the targeted element</p>
-
-        <h1>.before()</h1>
-        <p>Adds the element before the targeted element</p>
-
-
-
-
-
-
-
-
-
-
         <h1>append() an h3 tag</h1>
         <p>This appends an h3 tag using the jQuery selector</p>
         <p>This moves the h3 tag below the specified elemetn</p>
@@ -256,9 +276,48 @@
 
 
 
-<h1>remove()</h1>
-<p>The hide() method just adds a style attribute so youcannot see the Object, but it's still there.</p>
-<p>The remove() method removes the Object from the page</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <h1>Appending newly created elements</h1>
+                <p>This creates a new element, then appends it to the page.</p>
+
+<pre class="example"><span class="code-html">&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;button onclick="appendText()"&gt;Append text&lt;/button&gt;</span>
+
+<span class="code-js">function appendText() {
+  var txt1 = "&lt;p&gt;Text.&lt;/p&gt;";        // Create text with HTML
+  var txt2 = $("&lt;p&gt;&lt;/p&gt;").text("Text.");  // Create text with jQuery
+  var txt3 = document.createElement("p");
+  txt3.innerHTML = "Text.";         // Create text with DOM
+  $("body").append(txt1, txt2, txt3);   // Append new elements
+}</span></pre>
+
+                <h3>Example</h3>
+                <p>This is a paragraph.</p>
+                <button onclick="appendText()">Append text</button>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -279,6 +338,23 @@
         $("#btn3").click(function() {
             $("#math_subjects3").append($("h3#justThish3"));
         });
+
+        $("#btn1append").click(function(){
+  $("p#appendp1").append(" <b>Appended text</b>.");
+});
+
+$("#btn2append").click(function(){
+  $("ol#appendol2").append("<li>Appended item</li>");
+});
+
+
+function appendText() {
+  var txt1 = "<p>Text.</p>";        // Create text with HTML
+  var txt2 = $("<p></p>").text("Text.");  // Create text with jQuery
+  var txt3 = document.createElement("p");
+  txt3.innerHTML = "Text.";         // Create text with DOM
+  $("body").append(txt1, txt2, txt3);   // Append new elements
+}
     </script>
 </body>
 

@@ -83,14 +83,46 @@
 
 
 
+
+            <h1>Click button to remove a class</h1>
+
+            <pre class="example"><span class="code-css">.important {
+      font-weight: bold;
+      font-size: xx-large;
+    }
+
+    .blue {
+      color: blue;
+    }</span>
+
+<span class="code-html">&lt;p class="blue"&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+&lt;button id="btn3"&gt;Remove class from elements&lt;/button&gt;</span>
+
+<span class="code-js">$("button").click(function(){
+  $("p.blue").removeClass("blue");
+});</span></pre>
+
+
+            <h3>Example</h3>
+            <p class="blue">This is a paragraph.</p>
+            <p>This is another paragraph.</p>
+            <button id="btn3">Remove class from elements</button>
+
+
+
     </section>
     <script src="../../_js/jquery-3.4.1.min.js"></script>
     <script>
     $("p#ex").addClass("colorful timestwo");
       $("p#ex").removeClass("timestwo");
+
+      $("button").click(function(){
+  $("p.blue").removeClass("blue");
+});
     </script>
 
-      
+
 </body>
 
 </html>
