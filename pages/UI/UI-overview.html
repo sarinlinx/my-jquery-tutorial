@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <title>jQuery UI</title>
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <section class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-container">
+                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../../index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">jQuery UI</li>
+            </ol>
+        </nav>
+
+
+        <h1>jQuery UI</h1>
+        <p>##########</p>
+
+
+
+
+
+
+        <h1>Keyup Content Match in form field</h1>
+
+        <div class="row">
+            <div class="col-5">
+                <p>keyup() is used to check the 2nd input field.</p>
+                <p>If something is entered, the function named 'validate' is run</p>
+                <p>The HTML of the page is then updated.</p>
+                <ul>
+                    <li><a href="example-01.html" target="_blank">Example 1</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output1 Content&lt;/div&gt;
+<span class="code-comment">&lt;!-- input fields --&gt;</span>
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;</span>
+                               
+<span class="code-js"> $(document).ready(function() {
+  <span class="code-comment">// only checking pswb because it's assumed the first field pswa is already filled in
+  // on keyup is triggered, validate function is run</span>
+  $("#pswb").keyup(validate);
+
+  function validate() {
+    <span class="code-comment">// when function is triggered, the 'status' div changes to 'Working'</span>
+    $("#status").text("Working");
+  }
+})</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <h2>Add comparison check of 2 fields</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Create vars in the function to obtain the value of each field.</p>
+                <p>Create if else statment to check if they match.</p>
+                <p>CSS is also removed and added using 'removeClass' and 'addClass'.</p>
+                <ul>
+                    <li><a href="example-02.html" target="_blank">Example 2</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-css">.highlight {
+  background-color: red;
+}</span>
+                  
+<span class="code-html">&lt;div id="output"&gt;Output1 Content&lt;/div&gt;
+<span class="code-comment">&lt;!-- input fields --&gt;</span>
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;</span>
+                               
+<span class="code-js"> $(document).ready(function() {
+  <span class="code-comment">// only checking pswb because it's assumed the first field pswa is already filled in
+  // on keyup is triggered, validate function is run</span>
+  $("#pswb").keyup(validate);
+
+  function validate() {
+    <span class="code-comment">// obtain each value of the fields</span>
+    var psw1 = $("#pswa").val();
+    var psw2 = $("#pswb").val();
+
+    <span class="code-comment">// run a comparison of the 2 fields</span>
+    if (psw1 === psw2) {
+      $("#status").text("MATCHED");
+      <span class="code-comment">// remove the 'highlight' class</span>
+      $(".matchField").removeClass("highlight");
+    } else {
+      $("#status").text("NOT MATCH");
+      <span class="code-comment">// add the highlight class</span>
+      $(".matchField").addClass("highlight");
+    }
+  }
+})</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <h2>Add dropdown and check value</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Same as above, but add .val() to the console.log to specifically view which option was selected.</p>
+                <p>You can also add the value to the HTML output div</p>
+                <ul>
+                    <li><a href="example-03.html" target="_blank">Example 3</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Select a dropdown option and view the full object in the console.log&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;
+                  
+&lt;select&gt;
+  &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+  &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+  &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+  &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+    $("#myForm select").change(function() {
+        <span class="code-comment">// console.log the select value</span>
+        <span class="code-highlight">console.log($(this));
+       $("#output").text("Selected");</span>
+    })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Add dropdown and view object</h2>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Same as above, but add .val() to the console.log to specifically view which option was selected.</p>
+                <p>You can also add the value to the HTML output div</p>
+                <ul>
+                    <li><a href="example-04.html" target="_blank">Example 4</a></li>
+                </ul>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Select a dropdown option and view the full object in the console.log&lt;/div&gt;
+
+&lt;input id="pswa" class="matchField" type="text" /&gt;
+&lt;br /&gt;
+&lt;input id="pswb" class="matchField" type="text" /&gt;
+&lt;div id="status"&gt;&lt;/div&gt;
+
+&lt;div id="myForm"&gt;
+                  
+&lt;select&gt;
+  &lt;option value="option1" selected="selected"&gt;Option 1&lt;/option&gt;
+  &lt;option value="option2"&gt;Option 2&lt;/option&gt;
+  &lt;option value="option3"&gt;Option 3&lt;/option&gt;
+  &lt;option value="option4"&gt;Option 4&lt;/option&gt;
+&lt;/select&gt;
+&lt;/div&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+    $("#myForm select").change(function() {
+        <span class="code-comment">// console.log the select value</span>
+        <span class="code-highlight">console.log($(this).val());
+       $("#output").text("Selected: " + $(this).val());</span>
+    })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

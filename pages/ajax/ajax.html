@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" type="text/css" href="../../_css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_css/style.css">
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
     <title>Ajax</title>
 
     <style>
@@ -17,45 +18,46 @@
             font-family: Arial;
             font-size: 1.25em;
         }
-
+        
         table,
         th,
         td {
             border: 1px solid purple;
             border-collapse: collapse;
         }
-
+        
         th,
         td {
             padding: .25em;
         }
-
+        
         th {
             background-color: purple;
             color: white;
         }
-
+        
         .txtbox_itm {
             font-size: 18pt;
             height: 20px;
             width: 300px;
         }
-
+        
         .txtbox {
             font-size: 18pt;
             height: 20px;
             width: 50px;
         }
-
+        
         #amount_1 {
             display: none;
         }
-
+        
         button {
             width: 100px;
             height: 50px;
         }
     </style>
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
@@ -112,6 +114,49 @@
 
 
 
+
+
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>You could also load a local file instead of a URL.</p>
+                <p>NOTE: You must load the page in 'live-server' for it to work.</p>
+            </div>
+            <div class="col-7">
+
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output here&lt;/div&gt;</span>
+  
+<span class="code-js">$(document).ready(function () {
+$("#output").load("load.json");
+})</span></pre>
+            </div>
+        </div>
+
+
+
+        <h3>Example</h3>
+        <div id="output">Output</div>
+        <div class="one"><a href="#" id="myClicker">Click me</a></div>
+
+        <script>
+            $(document).ready(function() {
+                $("#myClicker").click(function(e) {
+                    e.preventDefault(); //prevent default link action
+                    $("#output").load("ex-json.json");
+                })
+            })
+        </script>
+
+
+
+
+
+
+
+
+
+
         <h1>Load a table using load()</h1>
 
         <pre class="example"><span class="code-html">&lt;div class="main"&gt;
@@ -129,6 +174,11 @@
         <div class="main2">
         </div>
         <button id="btn2"> Load Messages </button>
+
+
+
+
+
 
 
 
@@ -310,7 +360,8 @@
 
 
 
-        <h1>Load JSON dummy data into the webpage</h1><pre class="example"><span class="code-html">&lt;div class="main8"&gt;
+        <h1>Load JSON dummy data into the webpage</h1>
+        <pre class="example"><span class="code-html">&lt;div class="main8"&gt;
 &lt;/div&gt;
 
 &lt;button id="btn8"&gt; Load Messages &lt;/button&gt;</span>
@@ -414,8 +465,8 @@ $.ajax(root, {
 
 
         <h1>beforeSend and complete functions</h1>
-<p>beforeSend executes before Ajax call is made</p>
-<p>complete function runs after the Ajax call has been made, even if it errors</p>
+        <p>beforeSend executes before Ajax call is made</p>
+        <p>complete function runs after the Ajax call has been made, even if it errors</p>
 
 
         <pre class="example"><span class="code-html"><span class="code-html">&lt;div class="main10"&gt;
@@ -472,9 +523,403 @@ $.ajax(root, {
 
 
 
-                <h1>get method</h1>
-                <p>instead of using the ajax method, you can use the get method</p>
-                <p>this just takes the URL and SUCCESS callback</p>
+
+
+
+
+
+        <h1>get method</h1>
+        <p>instead of using the ajax method, you can use the get method</p>
+        <p>this just takes the URL and SUCCESS callback</p>
+
+
+
+        <h2>Viewing data change in the browser</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>The .get method allows you to do something with the returned data.</p>
+                <p><a href="ajax-get-method-01.html">Example</a></p>
+                <p>This alerts info from a PHP file. ( A server is required to view this info) </p>
+                <p>Visit the PHP file in a browser. Add <strong>?name=Hi</strong> to the end.</p>
+                <p>file.php$name=Hi</p>
+                <p>The page returns <strong>GET Hi</strong></p>
+            </div>
+            <div class="col-7">
+
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+&lt;input type="text" value="hihihi" id="myA"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+  $(document).ready(function() {
+      $("#myClicker2").click(function(e) {
+          e.preventDefault(); //prevent default link action
+          // send data to load.json file
+          // use function(data) to listen for returned information
+          $.get("get-method-php.php", function(data) {
+              //output any returned data
+              $("#output2").html(data);
+          })
+      })
+  })
+&lt;/script&gt;</span>
+
+<span class="code-php">&lt;?php
+
+if (isset($_GET['name'])) {
+  $name= "GET " . $_GET['name'];
+}
+
+else if (isset($_POST['name'])){
+$name= "POST" . $_POST['name'];
+}
+
+else {
+  $name= "Just default data ".rand(1,10000);
+}
+
+echo $name;
+
+?&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+        <h2>Passing data in the code</h2>
+        <div class="row">
+            <div class="col-5">
+                <p>Add a variable to store and object.</p>
+                <p>The object contains the value of the HTML field</p>
+                <p>Add the variable name to the .get() function</p>
+                <p>When you click the link, the page updates with <strong>GET hihihi</strong> since that's the value of the input field.</p>
+            </div>
+            <div class="col-7">
+
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+&lt;input type="text" value="hihihi" id="myA"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+  $("#myClicker2").click(function(e) {
+      e.preventDefault(); //prevent default link action
+      // use object oriented method to pick up data   
+      // create var and assign to object with data to pass over
+      <span class="code-highlight">var newdata = {
+        //get the value
+        name: $("#myA").val()
+      }</span>
+      // add newdata var as content your're passing
+      $.get("get-method-php.php", newdata, function(data) {
+          //output any returned data
+          $("#output2").html(data);
+      })
+  })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+        <h2>JSON example</h2>
+        <p><a href="ajax-get-method-01.html">Example</a></p>
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add url variable you're getting data from.</p>
+                <p>Use .getJSON to load the URL and retrieve the data.</p>
+                <p>You can then output to HTML and specify a specific JSON property key.</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+&lt;input type="text" value="hihihi" id="myA"&gt;</span>
+
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+  $("#myClicker").click(function(e) {
+    e.preventDefault(); //prevent default link action
+    // set URL var
+    <span class="code-highlight">var url = "load.json";</span> 
+        // add .getJSON method since you're working with a JSON file
+    <span class="code-highlight">$.getJSON(url, function(data) {
+        // view data in console
+        console.log(data)
+            // send data to HTML
+        $("#output").html(data.age)
+    })</span>
+  })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <h1>POST method</h1>
+        <p>More secure than GET since it's not sent in the URL.</p>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>This uses post to retrieve the data when you click the link.</p>
+                <p>This prints hihihi</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+              &lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+              &lt;input type="text" value="hihihi" id="myA"&gt;</span>
+              
+              <span class="code-js">&lt;script&gt;
+                $(document).ready(function() {
+                    $("#myClicker2").click(function(e) {
+                        e.preventDefault(); //prevent default link action  
+                        <span class="code-highlight">var newdata = {                       
+                          name: $("#myA").val()
+                        }
+                        $.post("file.php", newdata, function(data) {                        
+                            $("#output2").html(data);
+                        })</span>
+
+                    })
+                })
+              &lt;/script&gt;</span>
+              
+              <span class="code-php">&lt;?php
+              
+              if (isset($_GET['name'])) {
+                $name= "GET " . $_GET['name'];
+              }
+              
+              else if (isset($_POST['name'])){
+              $name= "POST" . $_POST['name'];
+              }
+              
+              else {
+                $name= "Just default data ".rand(1,10000);
+              }
+              
+              echo $name;
+              
+              ?&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <h2>Additional POST data</h2>
+        <h3>status</h3>
+        <p>This will return something like 'success' to confirm AJAX worked</p>
+        <h3>xhr</h3>
+        <p>All the object information in the callback</p>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Add status and xhr to the post function call to retrieve it</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+              &lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+              &lt;input type="text" value="hihihi" id="myA"&gt;</span>
+              
+              <span class="code-js">&lt;script&gt;
+                $(document).ready(function() {
+                    $("#myClicker2").click(function(e) {
+                        e.preventDefault(); //prevent default link action  
+                        var newdata = {                       
+                          name: $("#myA").val()
+                        }
+                        $.post("file.php", newdata, function(data,<span class="code-highlight">status,xhr</span>) {                        
+                            $("#output2").html(data);
+                        })
+
+                    })
+                })
+              &lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <h1>AJAX method</h1>
+
+        <p>Allows you to control content more than post.</p>
+
+
+        <div class="row">
+            <div class="col-5">
+                <p>Default method is get, but you can change with type</p>
+            </div>
+            <div class="col-7">
+                <pre class="example"><span class="code-html">&lt;div id="output"&gt;Output&lt;/div&gt;
+              &lt;div class="one"&gt;&lt;a href="#" id="myClicker"&gt;Click me&lt;/a&gt;Some Content&lt;/div&gt;
+              &lt;input type="text" value="hihihi" id="myA"&gt;</span>
+              
+<span class="code-js">&lt;script&gt;
+$(document).ready(function() {
+  $("#myClicker2").click(function(e) {
+      e.preventDefault(); //prevent default link action  
+      var newdata = {                       
+        name: $("#myA").val()
+      }
+    
+    $.ajax({
+      url:"ajax.php",
+      type:"POST",
+      data: newdata,
+      //if success is successful, fire function
+      success:function(data,status,xhr){
+      },
+      //otherwise run error function
+      error: function(data,status,xhr){
+      console.log(xhr); }
+
+  })
+})
+&lt;/script&gt;</span></pre>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -530,8 +975,8 @@ $.ajax(root, {
                 method: 'GET', //method
                 //only if call is successful load response from the URL
                 success: function(response) {
-                    $("div.main5").html(response);
-                } //no comma needed since it's last
+                        $("div.main5").html(response);
+                    } //no comma needed since it's last
             })
         });
 
