@@ -7,47 +7,38 @@
         div {
             margin: 20px;
         }
-        
-        .one {
-            border: 1px solid black;
-            display: inline-block;
-            padding: 5px;
-            background-color: azure;
-        }
-        
-        .highlight {
-            background-color: red;
-        }
-        
-        #output {
-            background-color: yellow;
-            border: 2px solid black;
-            padding: 10px;
-        }
     </style>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 </head>
 
 <body>
-    <div id="output">Output1 Content</div>
+
 
     <div class="ui-widget">
         <label for="searcher">Search Me:</label>
         <input id="searcher">
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
         $(document).ready(function() {
             var foo = ["abc", "dcd", "eee"];
+            // user 'autocomplete' on the source variable named 'foo'            
             $("#searcher").autocomplete({
                 source: foo,
+                // options
                 multiple: true,
+                // case check
                 mustMatch: false
             });
 
+            // run function after keyup
             $("#searcher").keyup(function() {
+                // store value entered into search field
                 var searchText = $(this).val();
                 foo.length = 0;
                 $.ajax({
@@ -64,6 +55,7 @@
             })
         });
     </script>
+
 </body>
 
 </html>
