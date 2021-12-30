@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="../../_css/styles.css">
+    <style>
+        #scroll-01 {
+            border: 1px solid rgb(0, 119, 255);
+            width: 200px;
+            height: 100px;
+            overflow: scroll;
+        }
+        
+        #scroll-02 {
+            border: 1px solid rgb(105, 161, 226);
+            width: 200px;
+            height: 100px;
+            overflow: scroll;
+        }
+    </style>
+    <title>Scroll</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar">
+        <a href="../../index.html">Back to homepage</a>
+        <a class="nav-page nav-active">Scroll</a>
+    </nav>
+
+
+
+
+
+    <h1>scroll()</h1>
+    <div class="text-section">
+        <p>The scroll event occurs when the user scrolls in the specified element.</p>
+        <p>The scroll event works for all scrollable elements and the window object (browser window).</p>
+        <p>The scroll() method triggers the scroll event, or attaches a function to run when a scroll event occurs.</p>
+    </div>
+
+
+
+
+
+
+    <h2>Code section</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;div id="scroll-01"&gt;blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;br&gt;&lt;br&gt; 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;/div&gt;
+&lt;p&gt;Scrolled &lt;span id="scroll"&gt;0&lt;/span&gt; times.&lt;/p&gt;</span>
+
+<span class="code-jquery">var x = 0;
+$("#scroll-01").scroll(function() {
+    $("span#scroll").text(x += 1);
+});</span></pre>
+
+
+
+            <h3>Example</h3>
+            <div id="scroll-01">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <br><br> 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+            </div>
+            <p>Scrolled <span id="scroll">0</span> times.</p>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <h2>Toggle Classes based on Scroll position</h2>
+    <section class="code-section-container">
+        <div class="code-text-section">
+            <p>......</p>
+        </div>
+
+        <div class="code-block-section-w60">
+            <pre class="example"><span class="code-html">&lt;div id="scroll-02"&gt;blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;br&gt;&lt;br&gt; 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+&lt;/div&gt;
+&lt;p&gt;Scrolled &lt;span id="scroll"&gt;0&lt;/span&gt; times.&lt;/p&gt;</span>
+
+<span class="code-jquery">..........</span></pre>
+
+            <h3>Example</h3>
+            <div id="scroll-02">blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <br><br> 'blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+                <p>When you have scrolled 50 pixels from the top, add the class "test" (yellow background color) to the paragraph. Scroll up again to remove the class.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <script src="../../_js/jquery-3.4.1.min.js"></script>
+    <script>
+        var x = 0;
+        $("#scroll-01").scroll(function() {
+            $("span#scroll").text(x += 1);
+        });
+
+        $("#scroll-02").scroll(function() {
+            if ($("#scroll-02").scrollTop() > 50) {
+                $("p").addClass("test");
+            } else {
+                $("p").removeClass("test");
+            }
+        });
+    </script>
+</body>
+
+</html>
